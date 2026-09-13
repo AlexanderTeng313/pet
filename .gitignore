@@ -1,0 +1,26 @@
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ---- Python ----
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# ---- Node / 构建产物 ----
+node_modules/
+dist/
+build/
+out/
+
+# ---- 打包产物（electron-builder 输出，体积大不入库）----
+release/
+release*/
+*.7z
+*.log
+
+# ---- WorkBuddy 本地会话笔记（仅本机，不发布）----
+.workbuddy/

@@ -1,0 +1,368 @@
+{
+  "version": 3,
+  "id": "coke",
+  "name": "可乐",
+  "identity": {
+    "species": "边牧",
+    "appearance": {
+      "coat": "黑白被毛",
+      "face": "面部白色宽条纹从额头延伸至鼻镜",
+      "chest": "白色围脖与胸腹",
+      "paws": "四肢末端白色",
+      "tail": "尾尖白色",
+      "ears": "半立耳",
+      "eyes": "棕色杏仁眼"
+    }
+  },
+  "temperament": {
+    "activity": 0.8,
+    "clinginess": 0.6,
+    "curiosity": 0.9,
+    "independence": 0.4
+  },
+  "bubbles": [
+    "汪！",
+    "摸摸我～",
+    "出去玩吗？",
+    "我盯着你呢",
+    "饿啦饿啦"
+  ],
+  "actions": {
+    "shafatang": {
+      "sprite": "shafatang/shafatang_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 149,
+      "scale": 1,
+      "label": "沙发躺",
+      "trigger": "idle",
+      "weight": 0,
+      "loop": true,
+      "diary": {
+        "mood": "安逸",
+        "text": "抱个小玩具做梦啦"
+      }
+    },
+    "shuizhentou": {
+      "sprite": "shuizhentou/shuizhentou_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 134,
+      "scale": 1,
+      "label": "睡枕头",
+      "trigger": "idle",
+      "weight": 0,
+      "loop": true,
+      "diary": {
+        "mood": "困倦",
+        "text": "裹着小被子睡觉觉"
+      }
+    },
+    "sizhaochaotian": {
+      "sprite": "sizhaochaotian/sizhaochaotian_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 139,
+      "scale": 1,
+      "label": "四爪朝天",
+      "trigger": "idle",
+      "weight": 0,
+      "loop": true,
+      "diary": {
+        "mood": "安逸",
+        "text": "睡觉觉"
+      }
+    },
+    "idle": {
+      "sprite": "idle/idle_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 269,
+      "scale": 1,
+      "weight": 0,
+      "loop": false,
+      "label": "刷狗音",
+      "trigger": "click",
+      "diary": {
+        "mood": "好奇",
+        "text": "看看好朋狗的朋友圈，刷刷狗音"
+      }
+    },
+    "qinqin": {
+      "sprite": "qinqin/qinqin_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 273,
+      "scale": 1,
+      "label": "亲亲你",
+      "trigger": "click",
+      "weight": 0,
+      "loop": false,
+      "diary": {
+        "mood": "亲昵",
+        "text": "人，我想和你贴贴"
+      }
+    },
+    "bala": {
+      "sprite": "bala/bala_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 261,
+      "scale": 1,
+      "label": "扒拉你",
+      "trigger": "click",
+      "weight": 0,
+      "loop": false,
+      "diary": {
+        "mood": "关心",
+        "text": "人，你需要休息一下啦"
+      }
+    },
+    "wozhuaa": {
+      "sprite": "wozhuaa/wozhuaa_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 314,
+      "scale": 1,
+      "label": "握爪爪",
+      "trigger": "click",
+      "weight": 0,
+      "loop": false,
+      "diary": {
+        "mood": "开心",
+        "text": "天下第一最最好~"
+      }
+    },
+    "momo_xiaba": {
+      "sprite": "momo_xiaba/momo_xiaba_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 260,
+      "scale": 1,
+      "label": "摸摸下巴",
+      "trigger": "click",
+      "weight": 0,
+      "loop": false,
+      "diary": {
+        "mood": "期待",
+        "text": "人，我来啦！"
+      }
+    },
+    "rounaodai": {
+      "sprite": "rounaodai/rounaodai_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 338,
+      "scale": 1,
+      "label": "揉脑袋",
+      "trigger": "click",
+      "weight": 0,
+      "loop": false,
+      "diary": {
+        "mood": "惬意",
+        "text": "摸摸🐶头，下雨不愁～"
+      }
+    },
+    "roulianjian": {
+      "sprite": "roulianjian/roulianjian_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 212,
+      "scale": 1,
+      "label": "揉脸脸",
+      "trigger": "click",
+      "weight": 0,
+      "loop": false,
+      "diary": {
+        "mood": "撒欢",
+        "text": "捏一捏，rua一rua"
+      }
+    },
+    "xuanfan": {
+      "sprite": "xuanfan/xuanfan_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 302,
+      "scale": 1,
+      "label": "大口炫饭",
+      "trigger": "click",
+      "weight": 0,
+      "loop": false,
+      "diary": {
+        "mood": "满足",
+        "text": "好吃好吃好吃"
+      }
+    },
+    "heshui": {
+      "sprite": "heshui/heshui_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 304,
+      "scale": 1,
+      "label": "喝水水",
+      "trigger": "click",
+      "weight": 0,
+      "loop": false,
+      "diary": {
+        "mood": "关心",
+        "text": "人，你也要记得喝水"
+      }
+    },
+    "liuliu": {
+      "sprite": "liuliu/liuliu_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 177,
+      "scale": 1,
+      "label": "溜溜达达",
+      "trigger": "click",
+      "weight": 0,
+      "loop": false,
+      "diary": {
+        "mood": "悠闲",
+        "text": "本汪自己在桌面上溜达一会"
+      }
+    },
+    "sikaogousheng": {
+      "sprite": "sikaogousheng/sikaogousheng_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 318,
+      "scale": 1,
+      "label": "思考狗生",
+      "trigger": "click",
+      "weight": 0,
+      "loop": false,
+      "diary": {
+        "mood": "若有所思",
+        "text": "要记得开心噢"
+      }
+    },
+    "pipi_qifei": {
+      "sprite": "pipi_qifei/pipi_qifei_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 298,
+      "scale": 1,
+      "label": "屁屁起飞",
+      "trigger": "click",
+      "weight": 0,
+      "loop": false,
+      "diary": {
+        "mood": "兴奋",
+        "text": "陪我玩一玩嘛"
+      }
+    },
+    "zhuantou": {
+      "sprite": "zhuantou/zhuantou_sheet.webp",
+      "frames": 60,
+      "fps": 12,
+      "frameWidth": 273,
+      "frameHeight": 335,
+      "scale": 1,
+      "label": "转头看你",
+      "trigger": "click",
+      "weight": 0,
+      "loop": false,
+      "diary": {
+        "mood": "好奇",
+        "text": "盯着你的鼠标🖱转动🐶脑袋"
+      }
+    }
+  },
+  "schedule": [
+    {
+      "from": "06:30",
+      "to": "08:00",
+      "name": "早起溜达",
+      "actions": [
+        "liuliu",
+        "sikaogousheng",
+        "heshui"
+      ]
+    },
+    {
+      "from": "08:00",
+      "to": "11:30",
+      "name": "上午陪工",
+      "actions": [
+        "sikaogousheng",
+        "heshui"
+      ]
+    },
+    {
+      "from": "11:30",
+      "to": "13:00",
+      "name": "午饭时间",
+      "actions": [
+        "xuanfan",
+        "heshui",
+        "sikaogousheng"
+      ]
+    },
+    {
+      "from": "13:00",
+      "to": "14:30",
+      "name": "午睡",
+      "actions": [
+        "shuizhentou",
+        "sizhaochaotian",
+        "shafatang"
+      ]
+    },
+    {
+      "from": "14:30",
+      "to": "18:00",
+      "name": "下午陪工",
+      "actions": [
+        "shafatang",
+        "sikaogousheng"
+      ]
+    },
+    {
+      "from": "18:00",
+      "to": "20:00",
+      "name": "晚饭遛弯",
+      "actions": [
+        "xuanfan",
+        "liuliu",
+        "heshui"
+      ]
+    },
+    {
+      "from": "20:00",
+      "to": "23:00",
+      "name": "晚上撒欢",
+      "actions": [
+        "pipi_qifei",
+        "qinqin",
+        "rounaodai",
+        "shafatang"
+      ]
+    },
+    {
+      "from": "23:00",
+      "to": "06:30",
+      "name": "夜里睡觉",
+      "actions": [
+        "shuizhentou",
+        "sizhaochaotian"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+  <title>提醒我</title>
+  <link rel="stylesheet" href="./panel.css" />
+  <style>
+    /* 无边框窗口没有标题栏 → 手动指定拖拽区：头部可拖动，按钮/输入框保持可点击 */
+    .head { -webkit-app-region: drag; cursor: grab; }
+    .head .close { -webkit-app-region: no-drag; cursor: pointer; }
+    .form, .form input, .form select, .btns button, .del { -webkit-app-region: no-drag; }
+    .form { padding: 0 0 12px; }
+    .lab { display: block; font-size: 11.5px; color: var(--text-secondary, #888); margin: 9px 0 4px; }
+    .lab:first-child { margin-top: 0; }
+    /* 关闭按钮：panel.css 里靠 .count(flex:1) 顶到右侧，本窗口无 .count → 用 margin-left:auto 推到最右 */
+    .head .close { margin-left: auto; flex-shrink: 0; }
+    .form input[type="text"], .form input[type="time"], .form select {
+      width: 100%; box-sizing: border-box; padding: 8px 11px;
+      border: 1px solid var(--border, rgba(0,0,0,.12)); border-radius: 9px;
+      font-size: 13px; font-family: inherit; outline: none;
+      background: var(--input-bg, rgba(255,255,255,.9)); color: var(--text-primary, #222);
+    }
+    .form input[type="text"]:focus { border-color: var(--accent, #f5a623); }
+    .hint { margin-top: 7px; font-size: 11.5px; line-height: 1.5; color: var(--text-secondary, #888); }
+    .btns { margin-top: 11px; display: flex; gap: 8px; justify-content: flex-end; }
+    /* 只作用于表单按钮，避免覆盖 panel.css 里圆形的 .close */
+    .btns button {
+      font-family: inherit; font-size: 12.5px; padding: 6px 14px; border-radius: 9px;
+      border: 1px solid var(--border, rgba(0,0,0,.12)); background: var(--btn-bg, #fff);
+      color: var(--text-primary, #222); cursor: pointer;
+    }
+    button.primary { background: var(--accent, #f5a623); border-color: transparent; color: #fff; font-weight: 600; }
+    .msg { margin-top: 9px; font-size: 12px; color: var(--accent, #f5a623); min-height: 16px; }
+    .del { border: none; background: transparent; color: var(--text-secondary, #999); cursor: pointer; font-size: 12px; padding: 0 4px; }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <div class="head">
+      <span class="title">⏰ 提醒我</span>
+      <button id="close" class="close" title="关闭">✕</button>
+    </div>
+    <div class="form">
+      <label class="lab" for="time">时间</label>
+      <input id="time" type="time" step="60" />
+      <label class="lab" for="repeat">重复</label>
+      <select id="repeat">
+        <option value="none">不重复</option>
+        <option value="daily">每天</option>
+        <option value="weekly">每周</option>
+      </select>
+      <label class="lab" for="text">提醒内容</label>
+      <input id="text" type="text" placeholder="例：喝水 / 起来走两步" spellcheck="false" />
+      <div class="hint">时间已过则顺延到明天同一时刻；每天/每周会在这个时间重复提醒。</div>
+      <div class="btns">
+        <button id="cancel">取消</button>
+        <button id="ok" class="primary">设置</button>
+      </div>
+      <div id="msg" class="msg"></div>
+    </div>
+    <div id="list" class="list"></div>
+  </div>
+  <script src="./reminder.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+  <title>番茄时钟</title>
+  <link rel="stylesheet" href="./panel.css" />
+  <style>
+    /* 无边框窗口没有标题栏 → 手动指定拖拽区：头部可拖动，按钮/输入框保持可点击 */
+    .head { -webkit-app-region: drag; cursor: grab; }
+    .head .close { -webkit-app-region: no-drag; cursor: pointer; }
+    .form, .form input, .btns button { -webkit-app-region: no-drag; }
+    .form { padding: 0 0 10px; }
+    .head .close { margin-left: auto; flex-shrink: 0; }
+    .phase { text-align: center; font-size: 12px; color: var(--text-secondary, #888); letter-spacing: 1px; }
+    .clock {
+      text-align: center; font-size: 44px; font-weight: 300; letter-spacing: 2px;
+      color: var(--text-primary, #222); margin: 6px 0 2px; font-variant-numeric: tabular-nums;
+    }
+    .dots { text-align: center; font-size: 14px; color: var(--accent, #f5a623); min-height: 18px; }
+    .btns { margin-top: 12px; display: flex; gap: 8px; justify-content: center; }
+    .btns button {
+      font-family: inherit; font-size: 12.5px; padding: 7px 16px; border-radius: 9px;
+      border: 1px solid var(--border, rgba(0,0,0,.12)); background: var(--btn-bg, #fff);
+      color: var(--text-primary, #222); cursor: pointer;
+    }
+    .btns button.primary { background: var(--accent, #f5a623); border-color: transparent; color: #fff; font-weight: 600; }
+    .cfg {
+      margin-top: 14px; display: flex; align-items: center; justify-content: center;
+      gap: 8px; font-size: 11px; color: var(--text-secondary, #888);
+      flex-wrap: nowrap; overflow: hidden; /* 三栏总宽必须小于可用宽度，否则右栏会被顶到边上 */
+    }
+    .cfg .f { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
+    .cfg .f span { letter-spacing: 0.2px; }
+    .cfg input {
+      width: 38px; box-sizing: border-box; padding: 5px 4px; font-size: 12px; text-align: center;
+      border: 1px solid var(--border, rgba(0,0,0,.12)); border-radius: 7px;
+      background: var(--input-bg, #fff); color: var(--text-primary, #222); font-family: inherit;
+    }
+    .cfg input:focus { outline: none; border-color: var(--accent, #f5a623); }
+    /* 数字输入框的上下小箭头占位，跟手写数字对齐 */
+    .cfg input::-webkit-outer-spin-button,
+    .cfg input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .hint { margin-top: 8px; font-size: 11px; line-height: 1.5; color: var(--text-secondary, #999); }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <div class="head">
+      <span class="title">🍅 番茄时钟</span>
+      <button id="close" class="close" title="关闭">✕</button>
+    </div>
+    <div class="form">
+      <div class="phase" id="phase">专注</div>
+      <div class="clock" id="clock">25:00</div>
+      <div class="dots" id="dots"></div>
+      <div class="btns">
+        <button id="toggle" class="primary">开始</button>
+        <button id="skip">跳过</button>
+        <button id="reset">重置</button>
+      </div>
+      <div class="cfg">
+        <label class="f"><span>专注</span><input id="workMin" type="number" min="1" max="180" /><span>分</span></label>
+        <label class="f"><span>短休</span><input id="breakMin" type="number" min="1" max="60" /><span>分</span></label>
+        <label class="f"><span>长休</span><input id="longBreakMin" type="number" min="1" max="120" /><span>分</span></label>
+      </div>
+      <div class="hint">每 4 个番茄后自动进入长休息。关掉窗口计时也在跑（由主进程计时）。</div>
+    </div>
+  </div>
+  <script src="./pomodoro.js"></script>
+</body>
+</html>
