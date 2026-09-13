@@ -205,10 +205,10 @@ def validate_pet_json(data: dict[str, Any], base_dir: str) -> int:
             errors += 1
             err(f"动作 {name}: pingpong 应为布尔值")
 
-        # 触发方式（click/auto/menu；缺省=旧行为）
-        if "trigger" in act and act["trigger"] not in ("click", "auto", "menu"):
+        # 触发方式（idle/click/auto/menu；缺省=旧行为）
+        if "trigger" in act and act["trigger"] not in ("idle", "click", "auto", "menu"):
             errors += 1
-            err(f"动作 {name}: trigger 应为 click/auto/menu，实际 {act['trigger']!r}")
+            err(f"动作 {name}: trigger 应为 idle/click/auto/menu，实际 {act['trigger']!r}")
 
         # v3 转移链（11-同类项目借鉴 §2.1）
         if "transitions" in act:

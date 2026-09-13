@@ -202,8 +202,8 @@
         },
         "trigger": {
           "type": "string",
-          "enum": ["click", "auto", "menu"],
-          "description": "触发方式：click=单击宠物随机触发；auto=随机行为池（仍需 weight>0）；menu=仅菜单手动；缺省=旧行为（weight/random + 菜单）"
+          "enum": ["idle", "click", "auto", "menu"],
+          "description": "触发方式：idle=待机循环组（常驻显存、loop 循环，由「动画切换时间」轮播）；click=单击宠物随机触发；auto=随机行为池（仍需 weight>0）；menu=仅菜单手动；缺省=旧行为（weight/random + 菜单）"
         },
         "diary": {
           "type": "object",
